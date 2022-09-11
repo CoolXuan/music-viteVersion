@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 35rem;
+}
+
+.icon-yonghufankuibeifen {
+    font-size: 0.2rem;
+    color: red;
+}
+
+.search_box {
+    font-size: 0.8rem;
+    font-weight: 1000;
+    padding-left: 0.5rem;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    float: left;
+    width: 20rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+    line-height: 2rem;
+    border-radius: 0.2rem;
+}
+
+.search_btn {
+    margin-left: 1rem;
+}
+
+.login_btn {
+    right: 5rem;
+}
+
+.header {
+    height: 3rem;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.header_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+.link {
+    float: left;
+    list-style: none;
+    width: 5rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    font-weight: 1000;
+    color: rgb(0, 0, 0);
+}
+
+.search {
+    z-index: 3;
+    float: left;
+    background-color: rgb(255, 255, 255);
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.router-link-active {
+    color: aquamarine;
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.ul_link {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.mid_search {
+    width: 74%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+}
+
+.shujuji {
+    text-align: center;
+    border-style: none;
+    float: left;
+    z-index: 3;
+    top: 0rem;
+    left: 0rem;
+    width: 6%;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.bg {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: auto;
+    /*加滤镜*/
+    /* 模糊背景 */
+    /* filter: blur(5px);
+    -webkit-filter: grayscale(100%); */
+    /* 灰度设置 */
+    /* filter: grayscale(100%); */
+    z-index: -100;
+}
+
+.inputBox {
+    height: 2rem;
+    width: auto;
+    font-size: 600;
+}
+
+label {
+    margin-right: 0.5rem;
+}
+
+.submit {
+    border-style: none;
+    z-index: 3;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    line-height: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: rgb(42, 206, 149);
+}
+
+.send_email {
+    border-style: none;
+    z-index: 3;
+    width: 5rem;
+    height: 2rem;
+    margin-left: 0.5rem;
+    border-radius: 0.4rem;
+    line-height: 1rem;
+    color: rgb(0, 0, 0);
+    font-size: 0.8rem;
+    font-weight: 1000;
+    background-color: rgb(42, 206, 149);
+}
+
+label {
+    width: 2rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.login_input {
+    width: 10rem;
+    height: 1.5rem;
+    border-radius: 0.4rem;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding-left: 0.5rem;
+}
+
+.box {
+    box-shadow: 0 0 5rem rgb(0, 0, 0);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    width: 20rem;
+    height: 20rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.4rem;
+    position: fixed;
+    top: 20%;
+    right: 38%;
+    z-index: 4;
+}
+
+.ok {
+    color: red;
+    font-size: 0.5rem;
+    font-weight: 800;
+}
+
+.author_info {
+    display: flex;
+    flex: 3;
+    text-align: center;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    font-weight: 800;
+    height: 6.5rem;
+    width: 100%;
+}
+
+.head_img {
+    float: left;
+    margin: 3rem 0 0 3rem;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+}
+
+.author_info img {
+    width: 100%;
+}
+
+.usr_id {
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    float: left;
+    margin-left: 0.6rem;
+    margin-top: 4.1rem;
+}
+
+.nav_author {
+    overflow: hidden;
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.author_link {
+    overflow: hidden;
+    font-weight: 1000;
+    width: 100%;
+    margin: 0.5rem 0.5rem 0 0;
+    border-radius: 0.4rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    height: 3rem;
+    background-color: rgb(255, 255, 255);
+    transition: background-color 0.2s ease-in 0.1s, color 0.2s ease-out 0.1s;
+}
+
+.author_link:hover {
+    background-color: rgba(128, 128, 128, 0.733);
+}
+
+.others_recommand {
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    border-radius: 0.4rem;
+    height: auto;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.others_recommand_title {
+    border-bottom: 0.2rem rgb(255, 255, 255) solid;
+}
+
+.recomand_box {
+    box-shadow: rgb(7, 240, 228) 0rem 0rem 0.2rem 0.1rem;
+    width: 22%;
+    display: inline-block;
+    overflow: hidden;
+    /* // position: fixed; */
+    height: auto;
+    border-radius: 0.4rem;
+}
+
+.main::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
+
+.main {
+    overflow: scroll;
+    display: inline-block;
+    box-shadow: rgb(240, 166, 7) 0rem 0rem 0.2rem 0.1rem;
+    margin-right: 0.5rem;
+    width: 77%;
+    /* background-color: rgba(70, 67, 67, 0.432); */
+    border-radius: 0.4rem;
+    height: 40rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.footer {
+    z-index: 9999;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1rem;
+}
+
+/* sendtext */
+.sendtext {
+    font-weight: 600;
+}
+
+.rich-text-test {
+    margin-top: 40px;
+}
+
+.title_box {
+    font-size: 0.8rem;
+    font-weight: 1000;
+    padding-left: 0.5rem;
+    text-decoration: none;
+    list-style: none;
+    width: 20rem;
+    height: 2rem;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+    line-height: 2rem;
+    border-radius: 0.4rem;
+}
+
+.title_label {
+    margin-left: 1rem;
+}
+
+.foot {
+    margin-top: 0.5rem;
+    height: auto;
+    line-height: auto;
+}
+
+.tougao {
+    font-size: 0.8rem;
+    font-weight: 1000;
+    padding-left: 0.5rem;
+    text-decoration: none;
+    list-style: none;
+    width: 8rem;
+    height: 2rem;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+    line-height: 2rem;
+    border-radius: 0.4rem;
+}
+
+.inline_block {
+    display: inline-block;
+}
+
+.uedit {
+    overflow: hidden;
+}
+
+.type_author {
+    margin-left: 1rem;
+    background-color: #fff;
+    width: 8rem;
+}
+
+.btn {
+    position: absolute;
+    border-style: none;
+    z-index: 3;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    line-height: 2rem;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: rgb(42, 206, 149);
+    z-index: 999;
+}
+
+.main_content {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    margin-top: 3.5rem;
+}
+
+.text_submit {
+    margin-left: 2rem;
+}
