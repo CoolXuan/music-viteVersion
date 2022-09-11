@@ -22,32 +22,27 @@ body {
     border: none;
     text-decoration: none;
     list-style: none;
-    float: left;
     width: 20rem;
     height: 2rem;
     margin-top: 0.5rem;
-    margin-left: 3rem;
     line-height: 2rem;
     border-radius: 0.2rem;
 }
 
-.search_btn {
-    margin-left: 1rem;
-}
+/* .search_btn {} */
 
-.login_btn {
-    right: 5rem;
-}
+/* .login_btn {} */
+
 
 .header {
     height: 3rem;
     width: 100%;
     background-color: rgb(255, 255, 255);
     position: fixed;
-    top: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
+    top: 0;
     z-index: 999;
 }
 
@@ -56,6 +51,20 @@ body {
     top: 0;
     left: 0;
     z-index: -100;
+}
+
+.nologo {
+    width: 70rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.searchleft {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
 
 .link {
@@ -67,12 +76,6 @@ body {
     font-size: 1rem;
     font-weight: 1000;
     color: rgb(0, 0, 0);
-}
-
-.search {
-    z-index: 3;
-    float: left;
-    background-color: rgb(255, 255, 255);
 }
 
 a {
@@ -90,22 +93,16 @@ h2 {
     margin-bottom: 3rem;
 }
 
-.ul_link {
-    width: 35%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-}
+
 
 .mid_search {
-    width: 74%;
+    /* margin-right: 30rem; */
+   display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-evenly;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
 
 .logo {
     width: 4rem;
@@ -114,20 +111,14 @@ ul {
 }
 
 .shujuji {
-    text-align: center;
     border-style: none;
-    float: left;
-    z-index: 3;
-    top: 0rem;
-    left: 0rem;
-    width: 6%;
-    height: 2rem;
-    line-height: 2rem;
+    width: 5rem;
+    height: 3rem;
     border-radius: 0.4rem;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     color: rgb(0, 0, 0);
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -405,20 +396,16 @@ a {
 }
 
 .btn {
-    position: absolute;
+    margin-left: 1rem;
     border-style: none;
-    z-index: 3;
     width: 6rem;
     height: 2rem;
     border-radius: 0.4rem;
     margin-top: 0.5rem;
-    margin-right: 0.5rem;
-    line-height: 2rem;
     color: aliceblue;
     font-size: 1rem;
     font-weight: 600;
     background-color: rgb(42, 206, 149);
-    z-index: 999;
 }
 
 .main_content {
@@ -426,7 +413,7 @@ a {
     flex-direction: row;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: auto;
+    height: 40rem;
     margin-top: 3.5rem;
 }
 

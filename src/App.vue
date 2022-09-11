@@ -14,6 +14,7 @@ import '@/public/index.css'
 </script>
 <style scoped>
 #app {
+  background-color: rgb(187, 187, 187);
   overflow: hidden;
   width: 90rem;
   min-width: 60rem;

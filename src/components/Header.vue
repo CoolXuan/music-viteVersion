@@ -6,39 +6,41 @@
     >
       <!-- <img class="header_bg"  alt="" /> -->
       <div class="shujuji">shujuji</div>
-      <ul class="ul_link">
-        <li class="link">
-          <router-link to="/"> <i class="el-icon-s-home" />首页 </router-link
-          >&nbsp;&nbsp;|
-        </li>
-        <li class="link">
-          <router-link to="/discuss">
-            <i class="el-icon-s-comment" />论坛 </router-link
-          >&nbsp;&nbsp;|
-        </li>
-        <li class="link">
-          <router-link to="/idea">
-            <i class="el-icon-question" />心得
-          </router-link>
-          &nbsp;&nbsp;|
-        </li>
-        <li class="link">
-          <router-link to="/back"
-            ><i class="el-icon-info" />反馈意见</router-link
-          >
-        </li>
-      </ul>
-      <div class="mid_search">
-        <input
-          type="text"
-          class="search_box"
-          @keyup.enter="search"
-          v-model="query"
-          placeholder="请输入搜索内容..."
-        />
-        <button class="btn search_btn" @click="search">搜索</button>
+      <div class="nologo">
+        <div class="searchleft">
+          <div class="link">
+            <router-link to="/"> <i class="el-icon-s-home" />首页 </router-link
+            >&nbsp;&nbsp;|
+          </div>
+          <div class="link">
+            <router-link to="/discuss">
+              <i class="el-icon-s-comment" />论坛 </router-link
+            >&nbsp;&nbsp;|
+          </div>
+          <div class="link">
+            <router-link to="/idea">
+              <i class="el-icon-question" />心得
+            </router-link>
+            &nbsp;&nbsp;|
+          </div>
+          <div class="link">
+            <router-link to="/back"
+              ><i class="el-icon-info" />反馈意见</router-link
+            >
+          </div>
+        </div>
+        <div class="mid_search">
+          <input
+            type="text"
+            class="search_box"
+            @keyup.enter="search"
+            v-model="query"
+            placeholder="请输入搜索内容..."
+          />
+          <button class="btn search_btn" @click="search">搜索</button>
+          <button class="btn login_btn" @click="denglu">登录</button>
+        </div>
       </div>
-      <button class="btn login_btn" @click="denglu">登录</button>
       <div class="box" v-if="active" @blur="loseAim">
         <h2>
           <span @click="change1">登录</span>|<span @click="change2">注册</span>
@@ -209,37 +211,67 @@ watch(
     deep: true,
   }
 );
-function get_code() {
+function getcode() {
   console.log("get-code");
   // if (userState.email.match("\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")) {
-    const url = "/apis/ecode/" + userState.email;
-    axios.post(url).then((data) => {
-      data = data.data;
-      if (data === "email-invalid") {
-        alert("邮箱地址格式不正确.");
-        return false;
-      }
-      if (data === "send-pass") {
-        alert("邮箱验证码已成功发送，请查收.");
-        return false;
-      }
-      if (data === "user-repeated") {
-        userState.email = "";
-        userState.pwd = "";
-        userState.repwd = "";
-        alert("邮箱已注册，请重新输入其他邮箱！");
-        return false;
-      }
-      if (data === "send-fail") {
-        alert("邮箱验证码未发送成功.");
-        return false;
-      }
-    });
+  const url = "/apis/ecode/" + userState.email;
+  axios.post(url).then((data) => {
+    data = data.data;
+    if (data === "email-invalid") {
+      alert("邮箱地址格式不正确.");
+      return false;
+    }
+    if (data === "send-pass") {
+      alert("邮箱验证码已成功发送，请查收.");
+      return false;
+    }
+    if (data === "user-repeated") {
+      userState.email = "";
+      userState.pwd = "";
+      userState.repwd = "";
+      alert("邮箱已注册，请重新输入其他邮箱！");
+      return false;
+    }
+    if (data === "send-fail") {
+      alert("邮箱验证码未发送成功.");
+      return false;
+    }
+  });
   // } else {
   //   alert("邮箱地址格式不正确1.");
   // }
 }
-function zhuce() {
+// 防抖
+function debounce(fn, delay) {
+  let timer = null;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn();
+    }, delay);
+  };
+}
+// 节流
+let time = 0;
+function throttling(fn, delay) {
+  let condition = Date.now();
+  if (condition - time > delay) { 
+    time = condition;
+    return function () {
+      fn();
+     
+    };
+  }
+  console.log("节流中.....");
+  // return function () {
+  //   clearTimeout(timer);
+  //   timer = setTimeout(() => {
+  //     fn();
+  //   }, delay);
+  // };
+}
+let get_code = throttling(getcode, 3000);
+function register() {
   if (userState.email === "" || userState.pwd === "" || userState.code) {
     alert("请填写全所有信息！");
   }
@@ -262,6 +294,8 @@ function zhuce() {
     }
   });
 }
+let zhuce = debounce(register, 3000);
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
