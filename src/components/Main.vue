@@ -14,7 +14,7 @@
         <div class="head_img">
           <img src="../assets/logo.png" alt="" />
         </div>
-        <div class="usr_id">未登录</div>
+        <div class="usr_id">裤裤</div>
       </div>
       <div class="nav_author">
         <ul>
